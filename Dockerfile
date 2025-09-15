@@ -9,7 +9,7 @@ RUN apt-get update \
     && update-ca-certificates
 
 WORKDIR /app
-COPY ./web-install-gpl-and-non-free.shg /app/web-install-gpl-and-non-free.sh
+COPY ./web-install-gpl-and-non-free.sh /app/web-install-gpl-and-non-free.sh
 # COPY ./build-ffmpeg /app/build-ffmpeg
 
 RUN bash web-install-gpl-and-non-free.sh

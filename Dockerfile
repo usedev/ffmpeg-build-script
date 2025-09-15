@@ -10,7 +10,7 @@ RUN apt-get update \
 
 WORKDIR /app
 COPY ./build-ffmpeg /app/build-ffmpeg
-
+RUN rm -fr /app/packages/*.done
 RUN bash web-install-gpl-and-non-free.sh
 
 RUN SKIPINSTALL=yes /app/build-ffmpeg --enable-gpl-and-non-free --build

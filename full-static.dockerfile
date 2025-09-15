@@ -13,7 +13,7 @@ RUN apt-get update \
 WORKDIR /app
 COPY ./build-ffmpeg /app/build-ffmpeg
 
-RUN AUTOINSTALL=yes /app/build-ffmpeg --build --full-static
+RUN AUTOINSTALL=yes /app/build-ffmpeg --enable-gpl-and-non-free --build --full-static
 
 # Check shared library
 RUN ! ldd /app/workspace/bin/ffmpeg

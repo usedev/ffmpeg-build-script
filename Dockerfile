@@ -11,7 +11,7 @@ RUN apt-get update \
 WORKDIR /app
 COPY ./build-ffmpeg /app/build-ffmpeg
 
-RUN SKIPINSTALL=yes /app/build-ffmpeg --build
+RUN SKIPINSTALL=yes /app/build-ffmpeg --enable-gpl-and-non-free --build
 
 FROM ubuntu:24.04
 

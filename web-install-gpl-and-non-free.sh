@@ -18,7 +18,7 @@ command_exists() {
     return 0
 }
 
-TARGET='ffmpeg-build'
+TARGET='.'
 
 if ! command_exists "curl"; then
     echo "curl not installed.";
@@ -36,5 +36,5 @@ cd $TARGET
 echo "Now we download and execute the build script"
 echo ""
 
-bash <(curl -s https://raw.githubusercontent.com/markus-perl/ffmpeg-build-script/master/build-ffmpeg) --build --enable-gpl-and-non-free
+bash /app/build-ffmpeg --build --enable-gpl-and-non-free
 
